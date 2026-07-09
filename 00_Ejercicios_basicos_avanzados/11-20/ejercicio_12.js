@@ -19,15 +19,16 @@ const duplicates = [
   'soda'
 ];
 function removeDuplicates(list) {
-  /*
-  bucle for 
-    coge la posicion y la guarda en una variable 
-    segundo bucle donde recorre de nuevo el array 
-        condicion de posicion i es === a posicion j 
-        si sí método splice 
-        si no siguiente posición j 
 
-devolver array final 
-  
-  */
+  let noDuplicates = [];
+
+for (let i = 0; i < list.length; i++) {
+  if (!noDuplicates.includes(list[i])){
+    noDuplicates.push(list[i]);
+  }
 }
+
+console.log (noDuplicates);
+}
+console.log(duplicates);
+removeDuplicates(duplicates);
