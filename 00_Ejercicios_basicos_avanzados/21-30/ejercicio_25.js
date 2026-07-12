@@ -16,4 +16,14 @@ const movies = [
   { title: 'Forrest Gump', releaseYear: 1994 }
 ];
 
-// Añade tu código de bucle aquí
+let oldMovies = [];
+let newMovies = [];
+for (let i = 0; i < movies.length; i++) {
+  if(movies[i].releaseYear <= 2000){
+    oldMovies.push(movies[i]);
+  }else{
+    newMovies.push(movies[i]);
+  }
+}
+
+console.log(`Hay ${oldMovies.length} peliculas anteriores alos 2000 y ${newMovies.length} posteriores a los 2000` );

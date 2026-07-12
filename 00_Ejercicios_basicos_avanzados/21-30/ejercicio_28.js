@@ -14,4 +14,12 @@ const albums = [
   { title: 'The Joshua Tree', genre: 'Rock', duration: 50.11 }
 ];
 
-// Añade tu código de bucle aquí
+let acumulador = 0;
+for (let i = 0; i < albums.length; i++) {
+if(albums[i].genre === "Rock"){
+  acumulador = acumulador + albums[i].duration;
+}
+  
+}
+
+console.log(`la duración total de los albunes de Rock es de ${acumulador} minutos`);

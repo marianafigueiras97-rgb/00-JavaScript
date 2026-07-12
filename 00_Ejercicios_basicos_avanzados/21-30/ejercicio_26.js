@@ -16,6 +16,17 @@ const songs = [
   { title: 'Thunderstruck', genre: 'Rock', duration: 4.52 },
   { title: 'Crazy Love', genre: 'Pop', duration: 3.52 },
 ];
-const rockPlaylist = [];
 
-// Añade tu código de bucle aquí
+function playlistFilter(list, genre, duration){
+  
+  const filteredPlaylist = [];
+  for (let i = 0; i < list.length; i++) {
+    if(list[i].genre === genre && list[i].duration >= duration){
+      filteredPlaylist.push(list[i]);
+    }
+  }
+console.log(`en la playlist de ${genre} hay ${filteredPlaylist.length} canciones con una duración mayor a ${duration} minutos y son las siguientes`);
+  console.log(filteredPlaylist);
+}
+
+playlistFilter(songs,"Rock",5.00);

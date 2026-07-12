@@ -16,4 +16,17 @@ const tracks = [
   { title: 'Stairway to Heaven', genre: 'Rock' }
 ];
 
-// Añade tu código de bucle aquí
+const groupedByGenre = {};
+
+for (let i = 0; i < tracks.length; i++) {
+  const track = tracks[i];
+  const genre = track.genre;
+
+  if (groupedByGenre[genre] === undefined) {
+    groupedByGenre[genre] = [];
+  }
+
+  groupedByGenre[genre].push(track.title);
+}
+
+console.log(groupedByGenre);

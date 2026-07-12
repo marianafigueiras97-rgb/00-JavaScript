@@ -16,4 +16,15 @@ const cartoons = [
   { name: "Dexter's Laboratory", debut: 1996 }
 ];
 
-// Añade tu código de bucle aquí
+let oldestYear = 2000;
+let oldestSeriesName = undefined;
+for (let i = 0; i < cartoons.length; i++) {
+  let currentSeries = cartoons[i].debut;
+  if(currentSeries < oldestYear){
+    oldestYear = currentSeries;
+    oldestSeriesName = cartoons[i].name;
+  }
+}
+
+console.log(` La serie mas antigua es ${oldestSeriesName}`);
+
