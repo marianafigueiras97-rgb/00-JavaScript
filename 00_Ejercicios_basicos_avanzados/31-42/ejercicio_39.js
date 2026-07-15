@@ -41,3 +41,24 @@ const users = [
     },
   },
 ];
+
+function countingFavorites(list) {
+  let sounds = {}; // objeto vacío para contar cuantas veces se repite cada sonido como favorito 
+
+  for (const user of list) { // recorremos cada usuario 
+    for (const soundName in user.favoritesSounds) { // accedemos a la propiedad de favoritesSounds y creamos la variable soundName
+
+    // en cada vuelta coge el nombre del sonido y pregunta si esta propiedad existe dentro del objeto sounds
+      if (sounds[soundName] === undefined) {// si no existe la crea dentro de sound y le da el valor de 1 para comenzar el conteo 
+        sounds[soundName] = 1;
+      } else { // si si existe la incrementa
+        sounds[soundName]++;
+      }
+
+    }
+  }
+
+  console.log(sounds);
+}
+
+countingFavorites(users);

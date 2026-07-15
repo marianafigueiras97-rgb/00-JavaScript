@@ -11,3 +11,15 @@ const fantasticFour = [
   "La mujer invisible",
   "La cosa",
 ];
+
+function swap (list,p1,p2){
+let posicionTemporal1 = list[p1];
+let posicionTemporal2 = list[p2];
+list[p1] = posicionTemporal2;
+list[p2] = posicionTemporal1;
+console.log(list);
+
+
+}
+
+swap(fantasticFour,0,1);
