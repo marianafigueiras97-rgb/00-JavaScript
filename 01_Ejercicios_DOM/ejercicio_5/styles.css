@@ -1,0 +1,72 @@
+:root {
+    --background: #FFF8FC;
+    --secondary-background: #FFEAF4;
+    --card: #FFFFFF;
+
+    --primary: #FF4F9A;
+    --text: #6B7280;
+    --radius: 14px;
+    --spacing: 20px
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing:border-box ;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--secondary-background);
+    color: var(--text);
+    text-align: center;
+}
+header{
+    margin: var(--spacing);
+}
+h1,h2,h3,h4{
+    color: var(--primary);
+}
+
+main{
+    background-color: var(--secondary-background);
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: var(--spacing);   
+}
+
+.card{
+    padding: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--card);
+    border-radius: var(--radius);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.bestSong{
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+footer{
+    margin: var(--spacing);
+}
+
+footer > span {
+    color: var(--primary);
+    font-weight: 600;
+}
