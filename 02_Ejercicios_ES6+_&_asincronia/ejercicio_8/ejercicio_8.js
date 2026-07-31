@@ -7,3 +7,49 @@
 // Esta sería la URL final (la que deberéis utilizar para vuestra petición):
 
 // https://thronesapi.com/api/v2/Characters
+
+
+const select = document.querySelector("#character-list");
+const imageContainer = document.querySelector("div");
+
+let characters = [];
+
+const getCharacters = async () => {
+    const respuesta = await fetch("https://thronesapi.com/api/v2/Characters");
+    characters = await respuesta.json();
+
+    renderSelect();
+};
+
+const renderSelect = () => {
+    characters.forEach((character) => {
+        const option = document.createElement("option");
+        option.value = character.id;
+        option.textContent = character.firstName;
+
+        select.appendChild(option);
+    });
+    renderCharacter(characters[0]);
+};
+
+const renderCharacter = (character) => {
+    imageContainer.innerHTML = `
+        <img src="${character.imageUrl}" alt="${character.firstName}">
+    `;
+};
+
+
+select.addEventListener("change", (event) => {
+    const id = Number(event.target.value);
+
+    const selectedCharacter = characters.find(
+        (character) => character.id === id
+    );
+
+    renderCharacter(selectedCharacter);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    getCharacters();
+});
